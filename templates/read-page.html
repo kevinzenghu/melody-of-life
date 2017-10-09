@@ -1,6 +1,7 @@
 {% extends "layout.html" %}
 {% from "macros/read.html" import get_read_icon, get_read_link, get_read_header %}
 {% block title %}{{ (this.title ~ ' | ') if this.title != 'Documentation' }}Documentation{% endblock %}
+
 {% block body %}
   <div class="read-container">
     <div class="read-navbar">
@@ -12,9 +13,7 @@
         {% for child in docs.children recursive %}
           <li{% if this._path == child._path %} class="active"{% endif
               %}>{{ get_read_link(child) }}
-            {% if this.is_child_of(child) %}
             <ul>{{ loop(child.children) }}</ul>
-            {% endif %}
         {% endfor %}
       </ul>
 
@@ -57,7 +56,7 @@
       {% else %}
         <span class="disabled">&laquo;</span>
       {% endif %}
-      — <!-- <strong>{{ this.page }}</strong> — -->
+      | <!-- <strong>{{ this.page }}</strong> — -->
       {% if this.has_next() %}
         <a href="{{ this.get_siblings().next_page|url }}">{{ this.get_siblings().next_page.title }}&raquo;</a>
       {% else %}

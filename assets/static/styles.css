@@ -37,9 +37,8 @@ nav li.active a {
 
 header {
   background: #2a2527;
-  background-repeat: repeat-x;
-  /*    background-size: 500px;*/
-  background-image: url(9345a8b8d12628c75cddbcb9924bed58.png); }
+  background-size: 100% auto;
+  background-image: url(e6672c38907ca7e13690492e52788d8f.png); }
 
 header, footer, div.page {
   margin: 0 auto;

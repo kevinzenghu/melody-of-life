@@ -5,4 +5,4 @@ title:
 sort_key: 10
 ---
 body:
-<img class='chapter-lead-image' src='/img/chapter-1-image.jpg' />
+<img class='chapter-lead-image' src='./chapter-1-image.jpg' />
