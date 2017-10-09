@@ -42,15 +42,15 @@ module.exports = {
           use: 'css-loader'
         }) 
       },
-      { test: /\.woff2?$|\.ttf$|\.eot$|\.svg$|\.png|\.jpe?g\|\.gif$/,
+      { test: /\.woff2?$|\.ttf$|\.eot$  /,
         loader: 'file-loader' },
-      // {
-      //  	test: /\.(jpe?g|png|gif|svg)$/,
-  	   //  use: [
-  	   //    'url-loader?limit=10000',
-  	   //    'img-loader'
-  	   //  ] 
-      // }
+      {
+       	test: /\.(jpe?g|png|gif|svg)$/,
+  	    use: [
+  	      'url-loader?limit=10000',
+  	      'img-loader'
+  	    ] 
+      }
     ]
   },
   plugins: [
