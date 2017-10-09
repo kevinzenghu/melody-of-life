@@ -1,0 +1,15 @@
+[project]
+name = melody-of-life
+
+[alternatives.zh]
+name = Chinese
+primary = yes
+locale = zh_CN
+
+[alternatives.en]
+name = English
+url_prefix = /en/
+locale = en_US
+
+[packages]
+lektor-webpack-support = 0.3

@@ -1,0 +1,325 @@
+// @font-face {
+//     font-family: 'Noto Sans';
+//     font-weight: normal;
+//     font-style: normal;
+//     src: url("fonts/NotoSansCJKsc-Regular.otf") format("opentype");
+// }
+
+/*@font-face {
+    font-family: 'Noto Sans';
+    font-weight: bold;
+    font-style: normal;
+    src: url("fonts/NotoSansCJKsc-Bold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    font-weight: light;
+    font-style: normal;
+    src: url("fonts/NotoSansCJKsc-Light.otf") format("opentype");
+}*/
+
+* {
+    webkit-font-smoothing: antialiased;
+}
+
+html, body {
+    margin: 0;
+}
+
+body {
+    font-family: 'Noto Sans', 'Noto Serif', Tahoma, Helvetica, Arial, "Microsoft Yahei","微软雅黑", STXihei, "华文细黑", sans-serif;
+    font-weight: normal;
+    background-color: #f4f4f1;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    /*color: #2a99b6;*/
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+nav li.active a {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+header {
+    background: #2a2527;    
+    background-repeat: repeat-x;
+/*    background-size: 500px;*/
+    background-image: url("../img/Flower_music_background.png");
+}
+
+header, footer, div.page {
+    margin: 0 auto;
+    padding: 20px 30px;
+}
+
+header img.mol-chinese-title {
+    height: 60px;
+}
+
+div.page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div.page p {
+    max-width: 600px;
+}
+
+header h1 {
+    color: white;
+    /*color: white;  #169bbd;*/
+    margin: 0;
+    font-weight: normal;
+    font-size: 28px;
+    font-family: 'Quintessential', cursive;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 25px 0 0;
+    padding: 0;
+    font-size: 20px;
+}
+
+header nav ul li.active {
+    /*background-color: black;*/
+}
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 10px 30px;
+}
+
+header nav {
+    margin-left: auto;
+}
+
+header a.home-link {
+    height: 60px;
+}
+
+.book-covers {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.book-covers img {
+    height: 500px;
+    width: auto;
+}
+
+.back-cover {
+    padding-left: 0px;
+}
+
+div.page {
+    background: #f4f4f1;
+}
+
+div.page p {
+    font-size: 17px;
+    font-size: 1.0625rem;
+    line-height: 26px;
+    line-height: 1.625rem;
+
+}
+
+ul.tree-nav {
+
+}
+
+ul.tree-nav li+li {
+    border-top: 1px solid #ddd;
+}
+
+ul.tree-nav li a {
+    color: #77304c;
+    text-decoration: none;
+}
+
+ul.tree-nav li a:hover {
+    text-decoration: underline;
+}
+
+ul.tree-nav li.active>a {
+    color: black;
+    text-decoration: underline;
+}
+
+div.read-container {
+    display: flex;
+    flex-direction: row;
+}
+
+div.read-container div.read-navbar {
+    width: 300px;
+    margin-right: 20px;
+}
+
+div.read-container div.read-content {
+    width: 600px;
+}
+
+div.read-container div.toc {
+    font-size: 24px;
+    color: #77304c;
+    padding-left: 20px;
+}
+
+img.chapter-lead-image {
+    max-width: 100%;
+}
+
+div.pagination a {
+    color: #77304c;
+}
+
+.burger {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    div.page {
+        padding: 0px 12px;
+    }
+    .book-covers {
+        display: block;
+    }
+
+    .book-covers img {
+        width: 100%;
+        height: auto;
+    }
+
+    .book-covers img.back-cover {
+        display: none;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    header nav {
+        display: none;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+    }
+
+    header nav ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    header nav ul li {
+        background-color: black;
+        padding: 10px 20px;
+        margin: 0;
+    }
+/*    nav ul {
+        display: none;
+    }*/
+
+    .burger {
+        margin-left: auto;
+        display: inline-block;
+    }
+
+    nav {
+      overflow: hidden;
+      max-height: 0;
+      -webkit-transition: max-height 0.5s ease-in-out;
+      transition: max-height 0.5s ease-in-out;
+    }
+}
+
+/*https://codepen.io/eduardoboucas/pen/BNyKwO*/
+.burger {
+  border: 0;
+  background: none;
+  outline: 0;
+  padding: 0;
+  cursor: pointer;
+  border-bottom: 4px solid white;
+  min-width: 28px;
+  transition: border-bottom 1s ease-in-out;
+  -webkit-transition: border-bottom 1s ease-in-out;
+}
+.burger::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+.burger:before {
+  content: "";
+  display: block;
+  border-bottom: 4px solid white;
+  width: 100%;
+  margin-bottom: 5px;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+}
+.burger:after {
+  content: "";
+  display: block;
+  border-bottom: 4px solid white;
+  width: 100%;
+  margin-bottom: 5px;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+}
+
+.burger-check {
+  display: none;
+}
+
+.burger-check:checked ~ .burger {
+  border-bottom: 4px solid transparent;
+  transition: border-bottom 0.8s ease-in-out;
+  -webkit-transition: border-bottom 0.8s ease-in-out;
+}
+.burger-check:checked ~ .burger:before {
+  transform: rotate(-405deg) translateY(1px) translateX(-3px);
+  -webkit-transform: rotate(-405deg) translateY(1px) translateX(-3px);
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+}
+.burger-check:checked ~ .burger:after {
+  transform: rotate(405deg) translateY(-4px) translateX(-5px);
+  -webkit-transform: rotate(405deg) translateY(-4px) translateX(-5px);
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+}
+
+.burger-check:checked ~ nav {
+  display: block;
+  max-height: 500px;
+  -webkit-transition: max-height 0.5s ease-in-out;
+  transition: max-height 0.5s ease-in-out;
+
+}

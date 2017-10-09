@@ -1,0 +1,45 @@
+<!doctype html>
+<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ '/static/styles.css'|asseturl }}">
+  <script type=text/javascript src="{{
+  '/static/app.js'|asseturl }}" charset="utf-8"></script>
+  <title>{{ this.title }}</title>
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Norican" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Quintessential" rel="stylesheet">
+<body>
+  <header>
+    <a class="home-link" href="{{ '/'|url }}">
+      {% if this.alt == 'zh' %}
+        <img class="mol-chinese-title" src="{{ '/static/MOL_Chinese_title.png'|asseturl }}" />
+      {% else %}
+        <h1>
+          {{ bag('main-nav', this.alt, 'title') }}
+        </h1>
+      {% endif %}
+    </a>
+    <input class="burger-check" id="burger-check" type="checkbox" /><label for="burger-check" class="burger"></label>   
+    <nav>
+      <ul class="nav navbar-nav">
+        {% for href, title in [
+          ['/read', bag('main-nav', this.alt, 'read')],
+          ['/poetry', bag('main-nav', this.alt, 'poetry')],
+          ['/letters', bag('main-nav', this.alt, 'letters')],
+          ['/reviews', bag('main-nav', this.alt, 'reviews')],
+          ['/contact', bag('main-nav', this.alt, 'contact')]
+        ] %}
+        <li{% if this.is_child_of(href) %} class="active"{% endif
+          %}><a href="{{ href|url }}">{{ title }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </header>
+  <div class="page">
+    {% block body %}{% endblock %}
+  </div>
+<!--   <footer>
+    &copy; Copyright 2017 by kzh.
+  </footer> -->
+</body>
