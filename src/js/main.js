@@ -1,16 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { 
-	HashRouter,
+	BrowserRouter,
 	Switch,
 	Route,
 	Link
 } from 'react-router-dom';
+import Poetry from './Poetry';
+import Read from './Read/Read';
 
 const Header = () => (
   <header>
 	<Link to='/'>
-  		<img class="mol-chinese-title" src={ require('./MOL_Chinese_title.png') } />
+  		<img className="mol-chinese-title" src={ require('./MOL_Chinese_title.png') } />
   	</Link>
     <nav>
       <ul>
@@ -28,6 +30,8 @@ const Main = () => (
 	<main>
     <Switch>
       <Route exact path='/' component={ Home }/>
+      <Route exact path='/poetry' component={ Poetry }/>
+      <Route exact path='/read' component={ Read }/>
     </Switch>
 	</main>
 )
@@ -55,7 +59,7 @@ const App = () => (
 	</div>
 )
 ReactDOM.render((
-	<HashRouter>
+	<BrowserRouter>
 		<App />
-	</HashRouter>
+	</BrowserRouter>
 ), document.getElementById('content'))

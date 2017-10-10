@@ -50,6 +50,17 @@ module.exports = {
   	      'url-loader?limit=10000',
   	      'img-loader'
   	    ] 
+      },
+      {
+        test: /\.md$/,
+        use: [
+          {
+            loader: 'html-loader'
+          },
+          {
+            loader: 'markdown-loader'
+          }
+        ]
       }
     ]
   },

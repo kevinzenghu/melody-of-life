@@ -250,6 +250,21 @@ div.pagination a {
     }
 }
 
+.read-page {
+  display: flex;
+  .sidebar {
+    a {
+      color: black;
+    }
+  }
+
+  .read-content {
+    max-width: 600px;
+  }
+}
+
+
+
 /*https://codepen.io/eduardoboucas/pen/BNyKwO*/
 .burger {
   border: 0;
