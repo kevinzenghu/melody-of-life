@@ -19,18 +19,24 @@
     src: url("fonts/NotoSansCJKsc-Light.otf") format("opentype");
 }*/
 
+$header-height: 85px;
+
 * {
     webkit-font-smoothing: antialiased;
 }
 
 html, body {
-    margin: 0;
+   margin: 0;
 }
 
 body {
     font-family: 'Noto Sans', 'Noto Serif', Tahoma, Helvetica, Arial, "Microsoft Yahei","微软雅黑", STXihei, "华文细黑", sans-serif;
     font-weight: normal;
     background-color: #f4f4f1;
+}
+
+main#page {
+  padding-top: $header-height + 20px;
 }
 
 a {
@@ -54,10 +60,6 @@ header {
     background-image: url("../img/Flower_music_background_banner.png");
 }
 
-header, footer, div.page {
-    margin: 0 auto;
-    padding: 20px 30px;
-}
 
 header img.mol-chinese-title {
     height: 60px;
@@ -100,9 +102,12 @@ header nav ul li.active {
 }
 
 header {
-    display: flex;
-    align-items: center;
-    padding: 10px 30px;
+  position: fixed;
+  width: calc(100% - 60px);
+  display: flex;
+  align-items: center;
+  height: 65px;
+  padding: 10px 30px;
 }
 
 header nav {
@@ -253,12 +258,24 @@ div.pagination a {
 .read-page {
   display: flex;
   .sidebar {
-    a {
-      color: black;
+    position: fixed;
+    min-width: 200px;
+    padding-left: 20px;
+    div.part {
+      display: flex;
+      flex-direction: column;
+      span.part-title {
+
+      }
+      a {
+        padding-left: 20px;
+        color: black;
+      }
     }
   }
 
   .read-content {
+    margin-left: 200px;
     max-width: 600px;
   }
 }

@@ -27,12 +27,12 @@ const Header = () => (
 )
 
 const Main = () => (
-	<main>
-    <Switch>
-      <Route exact path='/' component={ Home }/>
-      <Route exact path='/poetry' component={ Poetry }/>
-      <Route exact path='/read' component={ Read }/>
-    </Switch>
+	<main id="page">
+	    <Switch>
+	      <Route exact path='/' component={ Home }/>
+	      <Route exact path='/poetry' component={ Poetry }/>
+	      <Route exact path='/read' component={ Read }/>
+	    </Switch>
 	</main>
 )
 
@@ -55,7 +55,7 @@ const Home = () => (
 const App = () => (
 	<div>
 		<Header />
-		<Main />
+		<Main  />
 	</div>
 )
 ReactDOM.render((
